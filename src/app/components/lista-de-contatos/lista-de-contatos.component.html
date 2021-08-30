@@ -1,11 +1,13 @@
 <main>
-    <app-contato></app-contato>
-    <app-contato></app-contato>
-    <app-contato></app-contato>
-    <app-contato></app-contato>
-    <app-contato></app-contato>
-    <app-contato></app-contato>
-    <app-contato></app-contato>
-    <app-contato></app-contato>
+    <app-contato *ngFor="let contato of contatos"></app-contato>
+
+
+
+
+      <!-- tag pre = pre-formata o conteúdo
+        <pre>
+            {{contatos | json}}
+        </pre>-->
+    
     
 </main>
