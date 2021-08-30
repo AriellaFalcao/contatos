@@ -21,7 +21,7 @@ Criação de Menu:
     ☐ Dê estilo a ele baseado no css https://github.com/sergiomoura/contatos-html-template/blob/main/css/home.css
     - *Observe que o link para sair do sistema não está aparecendo corretamente (exit_to_app)*
     ☐ Importe as fontes do material icon fonts para o seu projeto adicionando a linha de código no index.html
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
     ☐ Verifique se o menu aparece corretamente.
 
 Criação de Lista de Contatos:
