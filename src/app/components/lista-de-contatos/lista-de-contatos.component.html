@@ -1,13 +1,5 @@
 <main>
-    <app-contato *ngFor="let contato of contatos"></app-contato>
-
-
-
-
-      <!-- tag pre = pre-formata o conteúdo
-        <pre>
-            {{contatos | json}}
-        </pre>-->
+    <app-contato *ngFor="let elemento of contatos"  [registro]="elemento"  ></app-contato>
     
     
 </main>
