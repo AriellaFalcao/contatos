@@ -13,7 +13,7 @@ export class CreateContatoComponent implements OnInit {
   novoContato:Contato = {
     nome:"",
     email:"",
-    telefone:["","",""]
+    telefone:[""]
  }
 
   constructor() { }
@@ -29,6 +29,20 @@ export class CreateContatoComponent implements OnInit {
   track(index:number, value:string){
     return index;
   }
+
+  addTelefone():void {
+    this.novoContato.telefone.push("");
+
+  }
+
+  removeTelefone(outrosTelefone:number):void{
+    this.novoContato.telefone.splice(outrosTelefone,1);
+
+  }
+
+
+
+
 
   ngOnInit(): void {
   }
