@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Contato } from '../models/Contato';
 
-
-
 const BASE_DE_CONTATOS:Contato[]= [
   {
     nome:"Duda 1",
@@ -32,17 +30,40 @@ const BASE_DE_CONTATOS:Contato[]= [
 ];
 
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class ContatoService {
 
-  constructor() { }
+  private baseDeContatos: Contato[];
+  private chave:string = "CONTATOS";
+
+  constructor() { 
+    // carregando informacões do localStorage na chave CONTATOS
+   let dados = window.localStorage.getItem(this.chave);
+
+   //verificando se as informacoes existem
+    if(dados){
+
+      // existe. transforma dados em arry e guarda em base de Contatos
+      this.baseDeContatos = JSON.parse(dados);
+    }else{
+
+      // nao existe
+
+      // poe uma string json com array vazio no localStorage
+
+        window.localStorage.setItem(this.chave,"[]");
+
+        //pondo um array vazio no atributo basedecontatos
+        this.baseDeContatos = []
+      }
+    }
+  }
+    
   
   getContatos(): Contato[] {
-   return BASE_DE_CONTATOS;
+   return this.baseDeContatos;
 
   }
 
@@ -56,13 +77,12 @@ export class ContatoService {
 
 
   addContato(c:Contato): void {
-      BASE_DE_CONTATOS.push(c)
+     this.baseDeContatos.push(c)
+     window.localStorage.setItem(this.chave, JSON.stringify(this.baseDeContatos));
   
     }
-
-
-
   }
+
   
 
 
